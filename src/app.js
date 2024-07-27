@@ -5,6 +5,7 @@ import authRoutes from './routes/auth.routes.js'
 const app = express() //app basicamente es como el servidor 
 
 app.use(morgan('dev'));
+app.use(express.json()); //es para que pueda convertir el req a formato json
 
-app.use(authRoutes);//es debajo de morgan xq morgan muestra la peticion que llegó
+app.use('/api' , authRoutes);//es debajo de morgan xq morgan muestra la peticion que llegó
 export default app;
